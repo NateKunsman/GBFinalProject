@@ -50,11 +50,13 @@ namespace Cafe
             }
         }
         //Create Item
-        private void CreateNewMenuItme()
+        private void CreateNewMenuItem()
         {
             Console.Clear();
             Menu menu = new Menu();
             //MealNumber
+            Console.WriteLine("Please enter the number this menu item will be refered to by");
+            menu.MealNumber = Console.ReadLine();
             //MealName
             //MealDesciption
             //MealIngredients
