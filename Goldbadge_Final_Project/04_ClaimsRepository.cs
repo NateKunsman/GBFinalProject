@@ -8,10 +8,11 @@ namespace Goldbadge_Final_Project
 {
     class _04_ClaimsRepository
     {
-        private readonly List<Claims> _claimsDirectory = new List<Claims>();
+        //Feild
+        private readonly Queue<Claims> _claimsDirectory = new Queue<Claims>();
         //Menu Items:
         //1.See all claims //Read method
-        public List<Claims> ShowAllClaims()
+        public Queue<Claims> ShowAllClaims()
         {
             return _claimsDirectory;
         }
