@@ -10,6 +10,8 @@ namespace Goldbadge_Final_Project
     {
         static void Main(string[] args)
         {
+            ProgramUI ui = new ProgramUI();
+            ui.Run();
         }
     }
 }
