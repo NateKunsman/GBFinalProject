@@ -1,0 +1,2 @@
+C:\Users\nkkun\source\repos\Goldbadge_Final_Project\Cafe\obj\Debug\Cafe.csproj.AssemblyReference.cache
+C:\Users\nkkun\source\repos\Goldbadge_Final_Project\Cafe\obj\Debug\Cafe.csproj.CoreCompileInputs.cache

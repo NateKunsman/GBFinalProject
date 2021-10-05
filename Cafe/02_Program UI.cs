@@ -35,7 +35,7 @@ namespace Cafe
                 {
                     case "1":
                         //Create new menu item
-                        CreatNewMenuItem();
+                        CreateNewMenuItem();
                         break;
                     case "2":
                         //Show all menu items
@@ -111,11 +111,10 @@ namespace Cafe
         //Helper Methods
         private void SeedData()
         {
-            //*********NEEDS FINISHED**********
-        }
-        private void DisplayMenu()
-        {
+            Menu blackBeanBurger = new Menu("#1", "Black Bean Burger\n" +
+                "blah blah yum, blah blah comes with side", "black beans, onions, lettuce, tomato", 8.99);
 
+            _repo.CreatNewMenuItem(blackBeanBurger);
         }
     }
 }
