@@ -12,6 +12,7 @@ namespace Cafe
         // public void Run() is a method that runs/starts the application
         public void Run()
         {
+            SeedData();
             RunMenu();
         }
         private void RunMenu()
@@ -54,7 +55,7 @@ namespace Cafe
                         Console.WriteLine("Please enter a valid number");
                         break;
                 }
-                Console.WriteLine("Please press any key to continue");
+                Console.WriteLine("Please press any key to return to menu");
                 Console.ReadKey();
                 Console.Clear();
             }
@@ -66,9 +67,9 @@ namespace Cafe
             Menu menu = new Menu();
             //MealNumber
             Console.WriteLine("Enter the number this menu item will be refered to by");
-            menu.MealNumber = int.Parse(Console.ReadLine());
+            menu.MealNumber = Console.ReadLine();
             //MealName
-            Console.WriteLine("Endter the name of this meal");
+            Console.WriteLine("Enter the name of this meal");
             menu.MealName = Console.ReadLine();
             //MealDesciption
             Console.WriteLine("Enter a description for this meal");
@@ -78,7 +79,7 @@ namespace Cafe
                 "Please type each ingredient followed by a comma.\n" +
                 "Example: cheese, lettuce, tomato");
             string mealIngredients = Console.ReadLine();
-            menu.MealIngredients = mealIngredients.Split(',').ToList);
+            //menu.MealIngredients = mealIngredients.Split(','); *****SEE IF YOU CAN GET THIS WORKING AS A STRING ARRAY****
             //MealPrice
             Console.WriteLine("Enter price for this meal");
            menu.MealPrice = double.Parse(Console.ReadLine());
@@ -103,6 +104,23 @@ namespace Cafe
         //Delete Menu Items
         private void DeleteMenuItem()
         {
+            ShowAllMenuItems();
+
+            //Get the Menu Item User wants to delete
+            Console.WriteLine("Enter the menu number of the meal you would like to delete");
+            string input = Console.ReadLine();
+            //Call the Delete method
+            bool wasDeleted = _repo.DeleteMenuItem(_repo.GetMenuItemByNumber(input));
+            //if the content was deleted, say so
+            if (wasDeleted)
+            {
+                Console.WriteLine("The meal was succesfully deleted");
+            }
+            else
+            {
+                Console.WriteLine("Meal number not found and therefore could not be deleted");
+            }
+            //Otherwise state it could not be deleted
 
         }
 
@@ -111,10 +129,16 @@ namespace Cafe
         //Helper Methods
         private void SeedData()
         {
-            Menu blackBeanBurger = new Menu("#1", "Black Bean Burger\n" +
-                "blah blah yum, blah blah comes with side", "black beans, onions, lettuce, tomato", 8.99);
+            Menu blackBeanBurger = new Menu("#1", "Black Bean Burger",
+                "blah blah yum, blah blah comes with side", "black beans, onions, lettuce, tomato", 11.95);
+            Menu marshmelloSliders = new Menu("#2", "Marshmellow Sliders",
+                 "blah blah 3 sliders(you can mix and match), blah blah comes with side", "ing1, ing2, ing3, ing4", 7.95);
+            Menu cowboyBurger = new Menu("#3", "Cowboy Burger",
+                "blah blah yum, blah blah comes with side", "peanut butter, ing7, ing11, ing2", 9.95);
 
             _repo.CreatNewMenuItem(blackBeanBurger);
+            _repo.CreatNewMenuItem(cowboyBurger);
+            _repo.CreatNewMenuItem(marshmelloSliders);
         }
     }
 }

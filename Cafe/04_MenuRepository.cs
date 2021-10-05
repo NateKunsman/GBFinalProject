@@ -33,5 +33,17 @@ namespace Cafe
             bool result = _menuDirectory.Remove(existingMenu);
             return result;
         }
+        //Helper
+        public Menu GetMenuItemByNumber(string mealNumber)
+        {
+            foreach (Menu item in _menuDirectory)
+            {
+                if (item.MealNumber == mealNumber)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
     }
 }
