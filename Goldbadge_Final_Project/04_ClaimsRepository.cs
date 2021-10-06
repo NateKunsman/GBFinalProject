@@ -21,10 +21,10 @@ namespace Goldbadge_Final_Project
 
 
         //3.Enter a new claim //Essentially a create method
-        public bool CreateNewClaim(Claims claims)
+        public bool CreateNewClaim(Claims contentOfClaim)
         {
             int startingCount = _claimsDirectory.Count;
-            _claimsDirectory.Add(claims);
+            _claimsDirectory.Enqueue(contentOfClaim);
             bool wasCreated = (_claimsDirectory.Count > startingCount) ? true : false;
             return wasCreated;
         }

@@ -12,7 +12,7 @@ namespace Cafe
         // public void Run() is a method that runs/starts the application
         public void Run()
         {
-            SeedData();
+            //SeedData();
             RunMenu();
         }
         private void RunMenu()
@@ -127,18 +127,19 @@ namespace Cafe
 
 
         //Helper Methods
-        private void SeedData()
-        {
-            Menu blackBeanBurger = new Menu("#1", "Black Bean Burger",
-                "blah blah yum, blah blah comes with side", "black beans, onions, lettuce, tomato", 11.95);
-            Menu marshmelloSliders = new Menu("#2", "Marshmellow Sliders",
-                 "blah blah 3 sliders(you can mix and match), blah blah comes with side", "ing1, ing2, ing3, ing4", 7.95);
-            Menu cowboyBurger = new Menu("#3", "Cowboy Burger",
-                "blah blah yum, blah blah comes with side", "peanut butter, ing7, ing11, ing2", 9.95);
+        //***************This seed data was used to test the application's ability to show all menu items**************
+        //private void SeedData()
+        //{
+        //    Menu blackBeanBurger = new Menu("#1", "Black Bean Burger",
+        //        "blah blah yum, blah blah comes with side", "black beans, onions, lettuce, tomato", 11.95);
+        //    Menu marshmelloSliders = new Menu("#2", "Marshmellow Sliders",
+        //         "blah blah 3 sliders(you can mix and match), blah blah comes with side", "ing1, ing2, ing3, ing4", 7.95);
+        //    Menu cowboyBurger = new Menu("#3", "Cowboy Burger",
+        //        "blah blah yum, blah blah comes with side", "peanut butter, ing7, ing11, ing2", 9.95);
 
-            _repo.CreatNewMenuItem(blackBeanBurger);
-            _repo.CreatNewMenuItem(cowboyBurger);
-            _repo.CreatNewMenuItem(marshmelloSliders);
+        //    _repo.CreatNewMenuItem(blackBeanBurger);
+        //    _repo.CreatNewMenuItem(cowboyBurger);
+        //    _repo.CreatNewMenuItem(marshmelloSliders);
         }
     }
-}
+

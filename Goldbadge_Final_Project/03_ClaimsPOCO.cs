@@ -14,7 +14,21 @@ namespace Goldbadge_Final_Project
         public double ClaimAmount { get; set; }
         public DateTime DateOfIncident { get; set; }
         public DateTime DateOfClaim { get; set; }
-        public bool IsValid { get; set; }
+        public bool IsValid 
+        {
+            get
+            {
+                TimeSpan value = DateOfClaim.Subtract(DateOfIncident);
+                if(value.TotalDays <= 30)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
         public Claims() { }
         public Claims(string claimID, string claimType, string description,
             double claimAmount, DateTime dateOfIncident, DateTime dateOfClaim, bool isValid)
@@ -25,8 +39,6 @@ namespace Goldbadge_Final_Project
             ClaimAmount = claimAmount;
             DateOfIncident = dateOfIncident;
             DateOfClaim = dateOfClaim;
-            IsValid = isValid;
-
         }
     }
 }
