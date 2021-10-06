@@ -17,15 +17,28 @@ namespace Goldbadge_Final_Project
             return _claimsDirectory;
         }
 
-        //2.Take care of next claim //a queu kind of method????
-
+        //2.Take care of next claim //A queue kind of method????
+        //Use Peek() or use Dequeue()?
+        //Method to view first in queue
+        public Claims PullTopClaim()
+        {
+            return _claimsDirectory.Peek();
+        }
+        //Method to deal with next claim
+        public bool RemoveTopClaim()
+        {
+            int startingCount = _claimsDirectory.Count;
+            _claimsDirectory.Dequeue();
+            bool wasRemoved = _claimsDirectory.Count < startingCount;
+            return wasRemoved;
+        }
 
         //3.Enter a new claim //Essentially a create method
         public bool CreateNewClaim(Claims contentOfClaim)
         {
             int startingCount = _claimsDirectory.Count;
             _claimsDirectory.Enqueue(contentOfClaim);
-            bool wasCreated = (_claimsDirectory.Count > startingCount) ? true : false;
+            bool wasCreated = _claimsDirectory.Count > startingCount;
             return wasCreated;
         }
     }

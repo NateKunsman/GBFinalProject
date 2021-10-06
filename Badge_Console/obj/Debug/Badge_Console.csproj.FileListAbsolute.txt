@@ -4,3 +4,4 @@ C:\Users\nkkun\source\repos\Goldbadge_Final_Project\Badge_Console\bin\Debug\Badg
 C:\Users\nkkun\source\repos\Goldbadge_Final_Project\Badge_Console\obj\Debug\Badge_Console.csproj.CoreCompileInputs.cache
 C:\Users\nkkun\source\repos\Goldbadge_Final_Project\Badge_Console\obj\Debug\Badge_Console.exe
 C:\Users\nkkun\source\repos\Goldbadge_Final_Project\Badge_Console\obj\Debug\Badge_Console.pdb
+C:\Users\nkkun\source\repos\Goldbadge_Final_Project\Badge_Console\obj\Debug\Badge_Console.csproj.AssemblyReference.cache

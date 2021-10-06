@@ -14,7 +14,7 @@ namespace Badge_Console
         {
             int startingCount = _badgesDictionary.Count;
             _badgesDictionary.Add(data.BadgeID, data);
-            bool wasAdded = (_badgesDictionary.Count > startingCount) ? true : false;
+            bool wasAdded = (_badgesDictionary.Count > startingCount);
             return wasAdded;
         }
         //List all badges

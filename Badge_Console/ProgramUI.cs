@@ -30,7 +30,7 @@ namespace Badge_Console
                 switch (userInput)
                 {
                     case "1":
-                        AddANewBadge();
+                        AddANewBadgeToDirectory();
                         break;
                     case "2":
                         EditExistingBadgeByID();
@@ -52,7 +52,7 @@ namespace Badge_Console
             }
         }
         //Add a badge
-        private void AddANewBadge()
+        private void AddANewBadgeToDirectory()
         {
             Console.Clear();
             Badges badge = new Badges();
@@ -64,6 +64,7 @@ namespace Badge_Console
                 Console.WriteLine("Would you like to add access to doors? y/n?");
                 if (Console.ReadLine() == "y")
                 {
+                    List<string> doorsToAdd = new List<string>();
                     bool enterDoorID = true;
                     while (enterDoorID)
                     {
@@ -71,7 +72,8 @@ namespace Badge_Console
                         Console.WriteLine("Enter which door(s) this badge has access to:\n" +
                             "If multiple doors please use commas to to seperate\n" +
                             "Example: A1, B5, A2");
-                        badge.DoorName.Add(Console.ReadLine());
+                        doorsToAdd.Add(Console.ReadLine());
+                        badge.DoorName = doorsToAdd;
                         Console.Clear();
                         Console.WriteLine("Add additional doors? y/n?");
                         if (Console.ReadLine()== "n")
