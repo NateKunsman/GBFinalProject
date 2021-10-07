@@ -1,0 +1,7 @@
+C:\Users\nkkun\source\repos\Goldbadge_Final_Project\Goldbadge_Final_Project\bin\Debug\Goldbadge_Final_Project.exe.config
+C:\Users\nkkun\source\repos\Goldbadge_Final_Project\Goldbadge_Final_Project\bin\Debug\Goldbadge_Final_Project.exe
+C:\Users\nkkun\source\repos\Goldbadge_Final_Project\Goldbadge_Final_Project\bin\Debug\Goldbadge_Final_Project.pdb
+C:\Users\nkkun\source\repos\Goldbadge_Final_Project\Goldbadge_Final_Project\obj\Debug\Claims.csproj.AssemblyReference.cache
+C:\Users\nkkun\source\repos\Goldbadge_Final_Project\Goldbadge_Final_Project\obj\Debug\Claims.csproj.CoreCompileInputs.cache
+C:\Users\nkkun\source\repos\Goldbadge_Final_Project\Goldbadge_Final_Project\obj\Debug\Goldbadge_Final_Project.exe
+C:\Users\nkkun\source\repos\Goldbadge_Final_Project\Goldbadge_Final_Project\obj\Debug\Goldbadge_Final_Project.pdb
