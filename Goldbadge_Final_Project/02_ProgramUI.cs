@@ -50,7 +50,7 @@ namespace Goldbadge_Final_Project
                 }
             }
         }
-        //List all claims
+        //Shows a list of all claims
         private void ShowAllClaims()
         {
             Console.Clear();
@@ -59,9 +59,19 @@ namespace Goldbadge_Final_Project
 
             foreach(Claims content in listOfClaims)
             {
-                DisplayClaim(content);
+                startingCount++;
+                Console.WriteLine(
+                    "ClaimID | Type | Description | Claim Amount | Date of Incident | Date of Claim | Valid");
+                Console.WriteLine(
+                    "_______________________________________________________________________________________");
+                Console.WriteLine(
+                    content.ClaimID + " " + content.TypeOfClaim + " " + content.Description + " " + content.ClaimAmount + " " + content.DateOfIncident + " " +
+                    content.DateOfClaim + " " + content.IsValid + "\n\n");
             }
             if(startingCount == 0)
+            {
+                Console.WriteLine("There are no claims at this time");
+            }
 
             Console.WriteLine("Press any key to return to the main menu");
             Console.ReadKey();
