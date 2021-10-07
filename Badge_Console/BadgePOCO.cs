@@ -9,8 +9,9 @@ namespace Badge_Console
     public class Badges
     {
         public Badges() { }
-        public Badges(List<string> doorName)
+        public Badges(int badgeID, List<string> doorName)
         {
+            BadgeID = badgeID;
             DoorName = doorName;
         }
         public int BadgeID { get; set; }

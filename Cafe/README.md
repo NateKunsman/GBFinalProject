@@ -1,5 +1,5 @@
 ﻿# Gold Badge Final Project
-Below is a list of console application used for business. I have written each application in Visual Studios 2019.
+Below is a list of console applications used for business. I have written each application in Visual Studios 2019.
 _______________________________
 ##Instructions
 All applications will be run using 

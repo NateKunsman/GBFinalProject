@@ -36,7 +36,7 @@ namespace Badge_Console
                         EditExistingBadgeByID();
                         break;
                     case "3":
-                        ListAllBadges();
+                        ListAllBadgesByIDAndShowDoorAccess();
                         break;
                     case "4":
                         //Exit
@@ -88,6 +88,8 @@ namespace Badge_Console
                     createNewDoor = false;
                 }
             }
+            Console.WriteLine("This badge was succesfully added\n" +
+                "Press any key to return to the main menu");
             _badgeRepo.AddANewBadgeToDirectory(badge);
         }
         //Edit a badge
@@ -96,9 +98,20 @@ namespace Badge_Console
 
         }
         //List all badges
-        private void ListAllBadges()
+        private void ListAllBadgesByIDAndShowDoorAccess()
         {
-
+            Console.Clear();
+            Console.WriteLine("Below is a list of badges and their access to doors:\n" +
+                "***********************************************");
+            Dictionary<int, Badges> dictionaryOfBadges = _badgeRepo.DisplayAllBadges();
+            foreach(KeyValuePair<int, Badges> content in dictionaryOfBadges)
+            {
+                Console.WriteLine(content.Key);
+                foreach(string door in content.Value.DoorName)
+                {
+                    Console.WriteLine(door);
+                }
+            }
         }
 
         //Helper Method
