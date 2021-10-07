@@ -19,8 +19,8 @@ namespace Goldbadge_Final_Project
 
         //2.Take care of next claim //A queue kind of method????
         //Use Peek() or use Dequeue()?
-        //Method to view first in queue
-        public Claims PullTopClaim()
+        
+        public Claims PullTopClaim()  //Method to view first in queue
         {
             if (_claimsQueue.Count == 0)
             {

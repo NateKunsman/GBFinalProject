@@ -8,12 +8,12 @@ namespace Badge_Console
 {
     class BadgeRepository
     {
-        private readonly Dictionary<int, List<string>> _badgesRepo = new Dictionary<int, List<string>> { };
+        private readonly Dictionary<int, Badges> _badgesRepo = new Dictionary<int, Badges>();
         //Add a badge
         public bool AddANewBadgeToDirectory(Badges newBadge)
         {
             int startingCount = _badgesRepo.Count;
-            _badgesRepo.Add(newBadge.BadgeID, newBadge.DoorName);
+            _badgesRepo.Add(newBadge.BadgeID, newBadge);
             bool wasAdded = (_badgesRepo.Count > startingCount);
             return wasAdded;
         }
@@ -30,22 +30,12 @@ namespace Badge_Console
         //Search for a specific badge
         public List<string> SearchForSpecificBadge(int badgeID)
         {
-            if (_badgesRepo.ContainsKey(badgeID))
+            foreach (var pair in _badgesRepo)
             {
-                List<string> listOfDoors;
-                foreach (KeyValuePair<int, List<string>> pair in _badgesRepo)
+                if (pair.Key == badgeID)
                 {
-                    if (pair.Key == badgeID)
-                    {
-                        listOfDoors = pair.Value;
-                        return listOfDoors;
-                    }
+                    return pair.Value;
                 }
-                return null;
-            }
-            else
-            {
-                return null;
             }
         }
 

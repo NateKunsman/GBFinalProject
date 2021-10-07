@@ -103,8 +103,8 @@ namespace Badge_Console
             Console.Clear();
             Console.WriteLine("Below is a list of badges and their access to doors:\n" +
                 "***********************************************");
-            Dictionary<int, Badges> dictionaryOfBadges = _badgeRepo.DisplayAllBadges();
-            foreach(KeyValuePair<int, Badges> content in dictionaryOfBadges)
+            var dictionaryOfBadges = _badgeRepo.DisplayAllBadges();
+            foreach(var content in dictionaryOfBadges)
             {
                 Console.WriteLine(content.Key);
                 foreach(string door in content.Value.DoorName)
