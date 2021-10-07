@@ -20,20 +20,35 @@ namespace Badge_Console
         //List all badges
         public List<int> DisplayAllBadges()
         {
-            return _badgesRepo;
+            List<int> badgesToDisplay = new List<int>();
+            foreach (var pair in _badgesRepo)
+            {
+                badgesToDisplay.Add(pair.Key);
+            }
+            return badgesToDisplay;
         }
         //Search for a specific badge
-        public Badges SearchForSpecificBadge(int badgeID)
+        public List<string> SearchForSpecificBadge(int badgeID)
         {
-            foreach (var badgeInfo in _badgesRepo)
+            if (_badgesRepo.ContainsKey(badgeID))
             {
-                if(badgeInfo.Key == badgeID)
+                List<string> listOfDoors;
+                foreach (KeyValuePair<int, List<string>> pair in _badgesRepo)
                 {
-                    return badgeInfo.Value;
+                    if (pair.Key == badgeID)
+                    {
+                        listOfDoors = pair.Value;
+                        return listOfDoors;
+                    }
                 }
+                return null;
             }
-            return null;
+            else
+            {
+                return null;
+            }
         }
+
 
         //Edit a badge
         public bool EditExistingBadgeByID(Badges existingBadge, Badges newBadge)
@@ -50,7 +65,7 @@ namespace Badge_Console
             }
         }
         //Delete door(s) from badge
-        public bool DeleteDoorsFromBadge(int badgeID, string doorName)
+        public bool DeleteDoorsFromBadge(Badges badgeID, string doorName)
         {
             Badges badgeData = SearchForSpecificBadge(badgeID);
             bool result = badgeData.DoorName.Remove(doorName);
